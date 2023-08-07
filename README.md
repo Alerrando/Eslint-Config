@@ -1,34 +1,124 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ESLint configuration
 
-## Getting Started
+## Setup
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### EsLint
+```
+npm install eslint --save-dev
+
+yarn add eslint --dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Typescript-Eslint/Parser and Typescript-Eslint/Eslint-Plugin
+```
+npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+yarn add @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
+```
 
-## Learn More
+### Eslint-Plugin-React
+```
+npm install eslint-plugin-react --save-dev
 
-To learn more about Next.js, take a look at the following resources:
+yarn add eslint-plugin-react --dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Eslint-Plugin-React-Hooks
+```
+npm install eslint-plugin-react-hooks --save-dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+yarn add eslint-plugin-react-hooks --dev
+```
 
-## Deploy on Vercel
+### Eslint-Plugin-Jsx-A11y
+```
+npm install eslint-plugin-jsx-a11y --save-dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+yarn add eslint-plugin-jsx-a11y --dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Eslint-Config-Prettier
+```
+npm install eslint-config-prettier --save-dev
+
+yarn add eslint-config-prettier --dev
+```
+
+### Prettier
+```
+npm install prettier --save-dev
+
+yarn add prettier --dev
+```
+
+### @Types/React and @Types/React-Dom (opcional)
+```
+npm install @types/react @types/react-dom --save-dev
+
+yarn add @types/react @types/react-dom --dev
+```
+
+## Inside .eslintrc.json
+```
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "standard",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "jsx-a11y", "@typescript-eslint"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "singleQuote": false,
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "semi": true,
+        "endOfLine": "auto"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/alt-text": [
+      "warn",
+      {
+        "elements": ["img"],
+        "img": ["Image"]
+      }
+    ],
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-unsupported-elements": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
+```
+
+<hr />
+<p>Alerrando © 2023 Obrigado por acessar</p>
