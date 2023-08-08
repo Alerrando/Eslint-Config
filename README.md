@@ -18,6 +18,13 @@ npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-de
 yarn add @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
 ```
 
+### Standard
+```
+npm install eslint-config-standard --save-dev
+
+yarn add eslint-config-standard --dev
+```
+
 ### Eslint-Plugin-React
 ```
 npm install eslint-plugin-react --save-dev
